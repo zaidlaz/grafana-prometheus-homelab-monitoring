@@ -1,0 +1,17 @@
+# Docker
+*.log
+*.pid
+*.sock
+
+# Grafana data
+grafana_data/
+*.db
+
+# Prometheus data
+prometheus_data/
+
+# OS
+.DS_Store
+
+# env
+.env
