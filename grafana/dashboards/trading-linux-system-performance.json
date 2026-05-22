@@ -1,0 +1,112 @@
+{
+  "title": "Trading Linux Homelab - System Performance",
+  "schemaVersion": 38,
+  "version": 1,
+  "refresh": "5s",
+  "panels": [
+    {
+      "type": "timeseries",
+      "title": "CPU Usage %",
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 12,
+        "h": 8
+      },
+      "targets": [
+        {
+          "expr": "100 - (avg by(instance) (rate(node_cpu_seconds_total{mode=\"idle\"}[1m])) * 100)",
+          "legendFormat": "{{instance}} CPU"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Load Average",
+      "gridPos": {
+        "x": 12,
+        "y": 0,
+        "w": 12,
+        "h": 8
+      },
+      "targets": [
+        {
+          "expr": "node_load1",
+          "legendFormat": "{{instance}} load1"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Memory Available %",
+      "gridPos": {
+        "x": 0,
+        "y": 8,
+        "w": 12,
+        "h": 8
+      },
+      "targets": [
+        {
+          "expr": "(node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes) * 100",
+          "legendFormat": "{{instance}} memory available"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Network Receive/Transmit Rate",
+      "gridPos": {
+        "x": 12,
+        "y": 8,
+        "w": 12,
+        "h": 8
+      },
+      "targets": [
+        {
+          "expr": "rate(node_network_receive_bytes_total{device!~\"lo|docker.*|veth.*\"}[1m])",
+          "legendFormat": "{{instance}} {{device}} RX"
+        },
+        {
+          "expr": "rate(node_network_transmit_bytes_total{device!~\"lo|docker.*|veth.*\"}[1m])",
+          "legendFormat": "{{instance}} {{device}} TX"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Network Packet Drops",
+      "gridPos": {
+        "x": 0,
+        "y": 16,
+        "w": 12,
+        "h": 8
+      },
+      "targets": [
+        {
+          "expr": "rate(node_network_receive_drop_total{device!~\"lo|docker.*|veth.*\"}[1m])",
+          "legendFormat": "{{instance}} {{device}} RX drops"
+        },
+        {
+          "expr": "rate(node_network_transmit_drop_total{device!~\"lo|docker.*|veth.*\"}[1m])",
+          "legendFormat": "{{instance}} {{device}} TX drops"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Disk I/O Time",
+      "gridPos": {
+        "x": 12,
+        "y": 16,
+        "w": 12,
+        "h": 8
+      },
+      "targets": [
+        {
+          "expr": "rate(node_disk_io_time_seconds_total[1m])",
+          "legendFormat": "{{instance}} {{device}} io time"
+        }
+      ]
+    }
+  ]
+}
