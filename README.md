@@ -1,4 +1,4 @@
-# homelab-monitoring
+# grafana-prometheus-homelab-monitoring
 
 # 🖥️ Homelab Monitoring Stack
 
@@ -56,7 +56,7 @@ A lightweight **Grafana + Prometheus monitoring stack** running on Docker, with 
 ---
 
 # 📂 Project Structure
-homelab-monitoring/
+grafana-prometheus-homelab-monitoring/
 ├── docker-compose.yml
 ├── README.md
 ├── .gitignore
@@ -71,5 +71,5 @@ homelab-monitoring/
 ## 1. Clone repository
 
 ```bash
-git clone https://github.com/zaidlaz/homelab-monitoring.git
-cd homelab-monitoring
+git clone https://github.com/zaidlaz/grafana-prometheus-homelab-monitoring.git
+cd grafana-prometheus-homelab-monitoring
