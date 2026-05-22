@@ -55,7 +55,18 @@ A lightweight **Grafana + Prometheus monitoring stack** running on Docker, with 
 
 ---
 
-# 📂 Project Structure
+# � Grafana Screenshots
+
+Screenshots of the monitoring dashboards are available in the [`screenshots/`](./screenshots) directory:
+
+| Dashboard | Description |
+|-----------|-------------|
+| [Server Health Dashboard](./screenshots/server-health-dashboard.jpg) | System performance and health metrics |
+| [cAdvisor Docker Insights](./screenshots/cadvisor_docker_insights.jpg) | Container resource usage and metrics |
+
+---
+
+# �📂 Project Structure
 grafana-prometheus-homelab-monitoring/
 ├── docker-compose.yml
 ├── README.md
